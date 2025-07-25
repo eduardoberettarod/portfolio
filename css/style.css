@@ -1,0 +1,87 @@
+body {
+    background: #111;
+    margin: 0;
+    height: 200vh;
+    /* Para o scroll funcionar igual seu código original */
+}
+
+@font-face {
+    font-family: 'MyFont';
+    src: url(vipnagorgialla/Vipnagorgialla\ Rg.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'MyFontBold';
+    src: url(vipnagorgialla/Vipnagorgialla\ Bd.otf) format('opentype');
+}
+
+.tittle {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    font-size: clamp(3rem, 10vw, 10rem);
+    font-family: 'MyFontBold';
+    background: linear-gradient(90deg, #710B18, #c00b23);
+    background-size: 200% 100%;
+    background-position: 0% 50%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 1;
+    animation: HomeText 6s infinite linear;
+    filter: drop-shadow(0 2px 6px #c00b2380);
+}
+
+.subtitle {
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    font-size: clamp(1rem, 2vw, 2rem);
+    font-family: 'MyFont';
+    background: linear-gradient(90deg, #710B18, #c00b23);
+    background-size: 200% 100%;
+    background-position: 0% 50%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 1;
+    animation: HomeText 6s infinite linear;
+    filter: drop-shadow(0 2px 6px #c00b2380);
+}
+
+@keyframes HomeText {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#page-home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#page-home .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(circle at 100% 100%, #ffffff, #ffffff);
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+section {
+    height: 100vh;
+}
