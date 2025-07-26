@@ -2,27 +2,51 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eduardo Beretta</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eduardo Beretta</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="imgs/logo-port.png" type="image/x-icon">
 </head>
 
 <body>
+
+  <div id="navbar"></div>
+  <script>
+    //Carregar conteúdo do navbar
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Erro ao carregar o navbar:', error);
+      });
+  </script>
   <section id="page-home">
-    <div class="circle"></div>
+    <div class="svg-contato-wrapper">
+      <svg width="686" height="173" viewBox="0 0 686 173" fill="none" class="svg-contato"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.99966 0.999557C85 63 621 62 685 0.999557" stroke="#241515" />
+        <path d="M684 172.126C601 110.126 65 111.126 1 172.126" stroke="#241515" />
+        <path d="M684 149.126C601 87.1257 65 88.1257 1 149.126" stroke="#241515" />
+        <path d="M1 88C541.8 88 676.333 88 676 88" stroke="#241515" />
+        <path d="M1 24C84.0003 86.0004 620 85.0004 684 24" stroke="#241515" />
+      </svg>
+
+    </div>
     <h1 class="tittle">Eduardo Beretta</h1>
     <p class="subtitle">Desenvolvedor Web</p>
   </section>
 
   <section>
     <p style="color: white;">ou8</p>
+    <img src="imgs/skeleton.webp" alt="Skeleton" class="skeleton">
   </section>
 
 
 
-
-<script src="javascript/script.js"></script>
+  <script src="javascript/script.js"></script>
 </body>
 
 </html>
