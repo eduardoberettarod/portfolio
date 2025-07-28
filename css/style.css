@@ -1,67 +1,41 @@
 body {
-    background: #110909;
-    margin: 0;
-    height: 200vh;
-    /* Para o scroll funcionar igual seu código original */
-    overflow-x: hidden;
+  background: #151515;
+  margin: 0;
+  height: 200vh;
+  /* Para o scroll funcionar igual seu código original */
+  overflow-x: hidden;
 }
 
 @font-face {
-    font-family: 'MyFont';
-    src: url(vipnagorgialla/Vipnagorgialla\ Rg.otf) format('opentype');
+  font-family: 'MyFont';
+  src: url(vipnagorgialla/Vipnagorgialla\ Rg.otf) format('opentype');
 }
 
 @font-face {
-    font-family: 'MyFontBold';
-    src: url(vipnagorgialla/Vipnagorgialla\ Bd.otf) format('opentype');
+  font-family: 'MyFontBold';
+  src: url(vipnagorgialla/Vipnagorgialla\ Bd.otf) format('opentype');
+}
+
+.text-home {
+  position: absolute;
+  left: 10%;
+  pointer-events: none;
 }
 
 .tittle {
-    position: absolute;
-    top: 20%;
-    left: 10%;
-    font-size: clamp(3rem, 10vw, 10rem);
-    font-family: 'MyFontBold';
-    background: linear-gradient(90deg, #710B18, #c00b23);
-    background-size: 200% 100%;
-    background-position: 0% 50%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    z-index: 1;
-    animation: HomeText 6s infinite linear;
-    filter: drop-shadow(0 2px 6px #c00b2380);
+  top: 20%;
+  font-size: 6rem;
+  font-family: 'MyFont';
+  color: #eee;
+  letter-spacing: 0.5rem;
 }
 
 .subtitle {
-    position: absolute;
-    bottom: 20%;
-    left: 10%;
-    font-size: clamp(1rem, 2vw, 2rem);
-    font-family: 'MyFont';
-    background: linear-gradient(90deg, #710B18, #c00b23);
-    background-size: 200% 100%;
-    background-position: 0% 50%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    z-index: 1;
-    animation: HomeText 6s infinite linear;
-    filter: drop-shadow(0 2px 6px #c00b2380);
-}
-
-@keyframes HomeText {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
+  position: absolute;
+  top: 60%;
+  font-size: 3rem;
+  font-family: 'MyFont';
+  color: #eee;
 }
 
 #page-home {
@@ -92,117 +66,143 @@ body {
   width: 100%;
   height: 100vh;
   background:
-    radial-gradient(ellipse 30% 35% at 50% 0%, rgba(113, 11, 24, 1) 30%, transparent 100%);
+    radial-gradient(ellipse 30% 55% at 85% 50%, rgba(0, 128, 255, 1) 30%, transparent 100%);
   pointer-events: none;
   z-index: -2;
   filter: blur(30px);
   opacity: 0.7;
 }
+
 section {
-    height: 100vh;
-}
-
-.logo-link{
-    position: absolute;
-    top: 5%;
-    left: 5%;
-}
-.logo {
-    width: 120px;
-    height: 120px;
-    object-fit: contain;
-    display: block;
-}
-.nav-links{
-    position: fixed;
-    list-style: none;
-    top: 8%;
-    right: 5%;
-    display: flex;
-    gap: 30px;
-}
-.nav-link{
-    text-decoration: none;
-    color: #c00b23;
-    font-family: 'MyFont';
-    font-size: 1rem;
-    animation: HomeText 6s infinite linear;
-    filter: drop-shadow(0 2px 6px #c00b2380);
-}
-
-.nav-link:hover{
-    color: white;
-    transition: 0.3s;
-}
-
-.svg-contato-wrapper {
-  position: absolute;
-  width: 100%;
   height: 100vh;
-    top: 0;
-    left: 0;
-  padding: 0;
-  z-index: -999;
-
-  /* Aplica a máscara SVG */
-  mask: url('linhas.svg');
-  -webkit-mask: url('linhas.svg');
-  mask-position: center;
-  -webkit-mask-position: center;
-  mask-size: contain;
-  -webkit-mask-size: contain;
-  mask-repeat: no-repeat;
-  -webkit-mask-repeat: no-repeat;
-  overflow: hidden;
-  /* esconde luz fora da área */
 }
 
-.svg-contato {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.svg-contato-wrapper::before {
-  content: "";
+.logo-link {
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 70%;
-  /* largura do feixe */
-  height: 100%;
-  z-index: 20;
-  background: linear-gradient(to left, transparent 45%, #c00b23 50%, transparent 55%);
-  animation: LUZFECHANDO 7s linear infinite;
+  top: 5%;
+  left: 5%;
+  z-index: 15;
 }
 
-@keyframes LUZFECHANDO {
-  0% {
-    transform: translateX(200%);
-    opacity: 0;
-  }
-
-  10% {
-    opacity: 1;
-  }
-
-  90% {
-    transform: translateX(-10%);
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateX(-50%);
-  }
+.logo {
+  width: 300px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  z-index: 15;
 }
 
-.skeleton{
-    position: relative;
-    top: 50%;
-    left: 80%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    height: 400px;
-    image-rendering: pixelated;
+.social-container {
+  position: absolute;
+  left: 15%;
+  bottom: 25%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  z-index: 15;
+}
+
+.social-link {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 50px;
+  background-color: #121212;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px transparent;
+  z-index: 15;
+}
+
+.social-link:hover {
+  box-shadow: 0 0 10px #0080ff, 0 0 20px #0080ff;
+  background-color: #1a1a1a;
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) saturate(100%) invert(51%) sepia(85%) saturate(3735%) hue-rotate(188deg) brightness(103%) contrast(105%);
+  /* isso transforma SVG preto em azul neon */
+  z-index: 15;
+}
+
+
+.nav-links {
+  position: fixed;
+  list-style: none;
+  bottom: 8%;
+  right: 50%;
+  transform: translateX(50%);
+  display: flex;
+  gap: 30px;
+  z-index: 10;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-family: 'MyFont';
+  font-size: 1rem;
+  z-index: 10;
+}
+
+.nav-link:hover {
+  filter: drop-shadow(0 0 10px #0080FF);
+  transition: 0.3s;
+}
+
+.nav-contato {
+  position: fixed;
+  right: 5%;
+  bottom: 8%;
+  z-index: 10;
+}
+
+.contato-btn {
+  text-decoration: none;
+  color: white;
+  font-family: 'MyFont';
+  font-size: 1rem;
+  background: #0080FF;
+  padding: 10px 50px 10px 20px;
+  border-radius: 10px;
+  z-index: 10;
+
+}
+
+.seta {
+  width: 20px;
+  height: auto;
+  position: absolute;
+  top: -20%;
+  transform: rotate(-135deg);
+  right: -10px;
+  background: #0080FF;
+  padding: 15px;
+  border-radius: 50%;
+}
+
+.contato-btn:hover {
+  filter: drop-shadow(0 0 10px #0080FF);
+
+}
+
+.nav-link:hover {
+  color: #0080FF;
+  transition: 0.3s;
+}
+
+.container-bala {
+  position: absolute;
+  left: 30%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bala {
+  width: 80%;
+  height: auto;
+  z-index: -1;
+  position: relative;
+  left: 35%;
+  pointer-events: none;
 }
