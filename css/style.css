@@ -1,9 +1,14 @@
 body {
-  background: #151515;
+  background: #050505;
   margin: 0;
   height: 200vh;
   /* Para o scroll funcionar igual seu código original */
   overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Para o scroll ser suave */
 }
 
 @font-face {
@@ -24,8 +29,8 @@ body {
 
 .tittle {
   top: 20%;
-  font-size: 6rem;
-  font-family: 'MyFont';
+  font-size: 5rem;
+  font-family: 'MyFontBold';
   color: #eee;
   letter-spacing: 0.5rem;
 }
@@ -73,6 +78,40 @@ body {
   opacity: 0.7;
 }
 
+#sobre{
+  align-items: center;
+  /* Alinha verticalmente */
+  justify-content: flex-start;
+  /* Alinha à esquerda */
+  height: 100vh;
+  /* Para ocupar a altura total da tela */
+  padding-left: 5vw;
+  /* Ajuste de margem esquerda opcional */
+  padding-right: 5vw;
+  /* Opcional, para evitar encostar muito */
+  box-sizing: border-box;
+  /* Para o padding não somar no tamanho */
+  position: relative;
+  /* Necessário para o ::before funcionar corretamente */
+  isolation: isolate;
+  /* Garante que o z-index e o backdrop-filter não vaze para fora */
+}
+
+#sobre::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background:
+    radial-gradient(ellipse 40% 55% at 20% 50%, rgba(0, 128, 255, 0.3) 20%, transparent 100%);
+  pointer-events: none;
+  z-index: -2;
+  filter: blur(30px);
+  opacity: 0.7;
+}
+
 section {
   height: 100vh;
 }
@@ -85,7 +124,7 @@ section {
 }
 
 .logo {
-  width: 300px;
+  width: 100px;
   height: auto;
   object-fit: contain;
   display: block;
@@ -95,7 +134,7 @@ section {
 .social-container {
   position: absolute;
   left: 15%;
-  bottom: 25%;
+  bottom: 20%;
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -113,18 +152,30 @@ section {
 }
 
 .social-link:hover {
-  box-shadow: 0 0 10px #0080ff, 0 0 20px #0080ff;
-  background-color: #1a1a1a;
+  transform: scale(1.2);
 }
 
 .social-icon {
-  width: 30px;
-  height: 30px;
-  filter: brightness(0) saturate(100%) invert(51%) sepia(85%) saturate(3735%) hue-rotate(188deg) brightness(103%) contrast(105%);
+  width: 22px;
+  height: auto;
+  filter: brightness(0) invert(1);
   /* isso transforma SVG preto em azul neon */
   z-index: 15;
 }
 
+.star {
+  position: fixed;
+  width: 40px;
+  height: auto;
+  bottom: 10%;
+  right: 40%;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+.star.rotate {
+   transform: rotate(45deg) scale(1.2);
+}
 
 .nav-links {
   position: fixed;
@@ -135,6 +186,11 @@ section {
   display: flex;
   gap: 30px;
   z-index: 10;
+  padding: 10px 40px 10px 20px;
+  border-radius: 10px;
+  background: transparent;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 .nav-link {
@@ -205,4 +261,91 @@ section {
   position: relative;
   left: 35%;
   pointer-events: none;
+}
+
+.container-cubo{
+  position: absolute;
+  right: 35%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.cubo{
+  width: 110%;
+  height: auto;
+  z-index: -1;
+  position: relative;
+  left: -20%;
+  pointer-events: none;
+}
+
+.container-sobre{
+  position: relative;
+  left: 15%;
+  transform: translateX(50%);
+  top: 20%;
+  z-index: 10;
+  color: #eee;
+  width: 50%;
+}
+
+.titulo-sobre{
+font-size: 9rem;
+font-family: 'MyFontBold';
+margin-bottom: 20px;
+color: transparent; /* texto vazado */
+-webkit-text-stroke: 0.2px #eee; /* contorno branco */
+}
+
+.texto-sobre{
+  font-size: 1rem;
+  font-family: 'MyFont';
+  line-height: 1.6;
+  color: #ccc;
+}
+.curriculo {
+  position: relative;
+  width: 20px;
+  height: auto;
+  top: 2px;
+  left: 105%;
+}
+
+.btn-curriculo {
+  text-decoration: none;
+  color: white;
+  font-family: 'MyFont';
+  font-size: 0.9rem;
+  background: #0080FF;
+  padding: 5px 40px 8px 5px;
+  border-radius: 8px;
+  z-index: 10;
+  border: none;
+}
+
+.btn-curriculo:hover {
+  filter: drop-shadow(0 0 10px #0080FF);
+}
+
+.btn-curriculo:active {
+  transform: scale(0.9);
+}
+
+.titulo-linguagens{
+  font-size: 1.5rem;
+  font-family: 'MyFont';
+  margin-bottom: 20px;
+  color: #eee;
+  margin-top: 50px;
+}
+.linguagens-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.linguagem-item img{
+  width: 50px;
 }
