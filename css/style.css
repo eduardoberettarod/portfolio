@@ -153,7 +153,7 @@ section {
   transform: rotate(-135deg);
   right: -10px;
   background: rgba(0, 128, 255, 1);
-  
+
   padding: 15px;
   border-radius: 50%;
 }
@@ -285,7 +285,7 @@ section {
 .titulo-projeto {
   font-size: 9rem;
   font-family: 'MyFontBold';
-  margin-bottom: 20px;
+  margin-bottom: 10%;
   color: transparent;
   /* texto vazado */
   -webkit-text-stroke: 0.2px #eee;
@@ -308,6 +308,7 @@ section {
   border-radius: 10px;
   height: max-content;
   width: 500px;
+  transition: 0.5s;
 }
 
 .projeto-img {
@@ -334,8 +335,8 @@ section {
 
 /* Animação suave no hover */
 .projeto-card:hover {
-  transform: scale(1.05);
-  transition: 0.4s ease;
+  transform: scale(1.02);
+  transition: 0.5s ease;
 }
 
 
@@ -380,9 +381,12 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.6); /* pigmento preto */
-  backdrop-filter: blur(8px);  /* desfoque */
-  z-index: 24; /* fica atrás do card */
+  background: rgba(0, 0, 0, 0.6);
+  /* pigmento preto */
+  backdrop-filter: blur(8px);
+  /* desfoque */
+  z-index: 24;
+  /* fica atrás do card */
   display: none;
 }
 
@@ -445,15 +449,17 @@ section {
   padding: 5px 10px;
   font-size: 0.9rem;
 }
+
 .close {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 20px;
-  height: 20px;
+  top: 15px;
+  right: 15px;
+  width: 25px;
+  height: 25px;
   opacity: 0.5;
   cursor: pointer;
-  color: rgb(255, 255, 255); /* Cor do X */
+  color: rgb(255, 255, 255);
+  /* Cor do X */
 }
 
 .close:hover {
@@ -478,6 +484,138 @@ section {
   transform: rotate(-45deg);
 }
 
-.close:active{
-  transform: scale(0.6);
+/*Section de contato*/
+.card-contato {
+  position: relative;
+  border-radius: 24px;
+  margin-top: 20vh;
+  width: 500px;
+  overflow: hidden;
+  left: 20vh;
+  z-index: 1;
+  /* Garante que o conteúdo fique acima do ::before */
+  background: rgba(0, 128, 255, 0.2);
+  border: 1px solid rgba(0, 128, 255, 0.5);
+}
+
+.card-contato::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  /* Aplica blur no fundo */
+  z-index: -1;
+  /* Fica atrás do conteúdo */
+}
+
+.card-contato h1 {
+  color: #eee;
+  font-family: 'MyFont';
+  margin-left: 5vh;
+  margin-top: 25px;
+  font-size: 1.7rem;
+  position: relative;
+  z-index: 2;
+}
+
+.card-contato label {
+  color: #eee;
+  font-family: 'MyFont';
+  margin-left: 5vh;
+  font-size: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+input {
+  background: transparent;
+  border: 1px solid rgba(0, 128, 255, 0.5);
+  border-radius: 10px;
+  margin-left: 4vh;
+  color: #eee;
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  padding-left: 10px;
+  width: 420px;
+  height: 50px;
+  margin-top: 10px;
+}
+
+textarea {
+  background: transparent;
+  border: 1px solid rgba(0, 128, 255, 0.5);
+  border-radius: 10px;
+  margin-left: 4vh;
+  color: #eee;
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  padding-left: 10px;
+  padding-top: 10px;
+  width: 420px;
+  margin-top: 10px;
+  max-height: 200px;
+  resize: none;
+}
+
+input::placeholder {
+  position: absolute;
+  color: #aaa;
+  font-family: 'Myfont';
+  font-size: 0.7rem;
+  margin-left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+textarea::placeholder {
+  position: absolute;
+  color: #aaa;
+  font-family: 'Myfont';
+  font-size: 0.7rem;
+  margin-left: 10px;
+  top: 15%;
+  transform: translateY(-50%);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border: 1px solid rgba(0, 128, 255, 1);
+}
+
+#btn-contato {
+  position: relative;
+  left: 20%;
+  transform: translateX(-50%);
+  border: none;
+  padding: 15px 40px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  background-color: #eee;
+  font-weight: 500;
+  color: #111;
+  font-family: 'Myfont';
+  font-size: 0.8rem;
+  box-shadow: 0 0 10px #040305;
+}
+
+#btn-contato:active {
+  position: relative;
+  left: 7%;
+  transform: translateX(-50%);
+  transform: scale(0.95);
+}
+
+.titulo-contato {
+  font-size: 9rem;
+  font-family: 'MyFontBold';
+  color: transparent;
+  text-align: center;
+  /* texto vazado */
+  -webkit-text-stroke: 0.2px #eee;
+  /* contorno branco */
 }
