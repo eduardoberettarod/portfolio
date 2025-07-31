@@ -13,12 +13,12 @@ html {
 
 @font-face {
   font-family: 'MyFont';
-  src: url(vipnagorgialla/Vipnagorgialla\ Rg.otf) format('opentype');
+  src: url() format('opentype');
 }
 
 @font-face {
   font-family: 'MyFontBold';
-  src: url(vipnagorgialla/Vipnagorgialla\ Bd.otf) format('opentype');
+  src: url() format('opentype');
 }
 
 .text-home {
